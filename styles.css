@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+/* reseteamos los estilos del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;  
+    font-family: "Montserrat", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* con este selector y propiedades conseguimos que las imagenes se adapten al tamaño del elemento que las contiene y sean responsive */
+img,
+video {
+    width: 100%;
+    height: auto;
+    vertical-align: middle;
+}
+
+/* HEADER */
+header {
+    height: 80vh;
+}
+
+.logo-btn-nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+section {
+    background-color: #2B2622;
+}
+
+/* SECCTION EXPERIENCE */
+.experience {
+    height: 300vh;
+    display: flex;
+    justify-content: center;
+}
+
+.experience div:first-child {
+    width: 250px;
+}

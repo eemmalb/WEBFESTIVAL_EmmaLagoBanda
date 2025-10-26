@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+    <html lang="es">
+        <head>
+            <title>RAVIAFEST</title>
+            <meta charset="utf-8">
+            
+            <!-- CARGAMOS ARCHIVO EXTERNO DE CSS -->
+            <link href="styles.css" rel="stylesheet" type="text/css">
+
+
+            <link href="media/img/favicon.png" rel="icon" type="image/png">
+            <!--ICONOS DE FONT AWESOME-->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+            
+            <!-- importacion de la libreria, hay que importar la libreria antes que nuestro archivo js  -->
+            <!-- el link da los estilos  -->
+            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+            <!-- el script da las animaciones -->
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            
+            <!-- CARGAMOS ARCHIVO EXTERNO DE JS -->
+            <script src="js/script.js"></script>
+            <script src="https://kit.fontawesome.com/c3fd22b8e3.js" crossorigin="anonymous"></script>
+    
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        </head>
+
+        <body>
+            <header>
+                <!-- logo y botón entradas -->
+                <div class="logo-btn-nav">
+                    <div class="logo">
+                        <img src="media/img/LogoRAVIA.webp" alt="RAVIA FESTIVAL">
+                    </div>
+                    <div class="btn-entradas">ENTRADAS</div>
+                    
+                    <!-- menú hamburguesa desplegable -->
+                    <nav id="menu">
+                        <div>
+                            <i class="fas fa-bars" onclick="openMenu()"></i>
+                            <ul>
+                                <li>
+                                    <a href="#quienessomos" onclick="closeMenu()">LINE-UP</a>
+                                </li>
+                                <li>
+                                    <a href="#disenios" onclick="closeMenu()">ENTRADAS</a>
+                                </li>
+                                <li>
+                                    <a href="#contacto" onclick="closeMenu()">INFO</a>
+                                </li>
+                                <li>
+                                    <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <i class="fas fa-search"></i>
+                            <i class="far fa-star"></i>
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h1>
+                            <a href="#"><span class="logo"></span></a>
+                        </h1>
+                    </nav>
+                </div>
+                    
+                    <video autoplay muted loop playsinline>
+                        <source src="media/video/pruebavideohome.mp4" type="video/mp4">
+                    </video>
+                </header>
+                
+                
+            <section class="experience">
+                <div><img src="media/img/mrGrillzy.webp" alt=""></div>
+            </section>
+
+        </body>
+
+    </html>
