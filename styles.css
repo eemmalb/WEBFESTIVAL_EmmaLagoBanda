@@ -4,6 +4,8 @@
 /* VARIABLES */
 :root {
     --color-primario: #2B2622;
+    --color-secundario: #ffffff;
+    --color-especial: #57B0A3;
     --margenes-texto: 1rem 0;
     --borde: var(--color-primario) 0.2rem solid;
     --interlineado: 1.5em;
@@ -17,7 +19,6 @@
     padding: 0;
     box-sizing: border-box;  
     font-family: "Montserrat", sans-serif;
-    color: #ffffff;
 }
 
 a {
@@ -41,10 +42,30 @@ header {
     height: 80vh;
 }
 
+.logo-entradas {
+    position: fixed;
+    display: flex;
+    padding: 12px ;
+    width: 95vw;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.entradas {
+    margin-right: 1rem;
+}
+.entradas a {
+    color: var(--color-especial);
+    background-color: var(--color-secundario);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    border-radius: 3rem;
+}
+
 .logo {
     width: 12vw;
     min-width: 90px;
-    padding: 12px ;
 }
 
 video {
@@ -58,13 +79,15 @@ video {
 }
 
 /* MENU DE HAMBURGUESA DESPLEGABLE */
-
 .menu-icon {
     position: fixed;
     top: var(--distancia-iconos);
     right: var(--distancia-iconos);
     font-size: var(--tamano-texto-menu);
+    color: var(--color-secundario);
+    z-index: 10;
 }
+
 
 #menu {
     position: fixed;
@@ -75,7 +98,7 @@ video {
     padding: 3rem 0;
     background-color: var(--color-primario);
     transition-duration: 1s;
-    z-index: 10;
+    z-index: 20;
 }
 
 #menu > ul {
