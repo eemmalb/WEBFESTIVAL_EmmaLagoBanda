@@ -1,16 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
 
+/* VARIABLES */
+:root {
+    --color-primario: #2B2622;
+    --margenes-texto: 1rem 0;
+    --borde: var(--color-primario) 0.2rem solid;
+    --interlineado: 1.5em;
+    --distancia-iconos: 1rem;
+    --tamano-texto-menu: 2rem;
+}
+
 /* reseteamos los estilos del navegador */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;  
     font-family: "Montserrat", sans-serif;
+    color: #ffffff;
 }
 
 a {
     text-decoration: none;
+}
+
+section {
+    background-color: var(--color-primario);
 }
 
 /* con este selector y propiedades conseguimos que las imagenes se adapten al tamaño del elemento que las contiene y sean responsive */
@@ -26,12 +41,11 @@ header {
     height: 80vh;
 }
 
-.logo-btn-nav {
-    display: flex;
-    justify-content: space-between;
+.logo {
+    width: 12vw;
+    min-width: 90px;
+    padding: 12px ;
 }
-
-
 
 video {
     position: fixed;
@@ -43,17 +57,64 @@ video {
     z-index: -1;
 }
 
-section {
-    background-color: #2B2622;
+/* MENU DE HAMBURGUESA DESPLEGABLE */
+
+.menu-icon {
+    position: fixed;
+    top: var(--distancia-iconos);
+    right: var(--distancia-iconos);
+    font-size: var(--tamano-texto-menu);
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    padding: 3rem 0;
+    background-color: var(--color-primario);
+    transition-duration: 1s;
+    z-index: 10;
+}
+
+#menu > ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    list-style: none;
+}
+
+#menu > ul > li > a,
+#menu > ul > li > i {
+    color: white;
+    font-size: var(--tamano-texto-menu);
+}
+
+#menu > ul > li:last-child {
+    position: absolute;
+    right: var(--distancia-iconos);
+    top: var(--distancia-iconos);
 }
 
 /* SECCTION EXPERIENCE */
 .experience {
+    position: relative;
     height: 300vh;
     display: flex;
     justify-content: center;
 }
 
 .experience div:first-child {
-    width: 250px;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 22vw;
+    min-width: 270px;
+    margin-bottom: -100px;
 }

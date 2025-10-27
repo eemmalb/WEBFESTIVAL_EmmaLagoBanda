@@ -27,52 +27,43 @@
         </head>
 
         <body>
+            <!-- PÁGINA DE CARGA - TODO -->
+            <div class="menu-icon" onclick="openMenu()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
             <header>
-                <!-- logo y botón entradas -->
-                <div class="logo-btn-nav">
-                    <div class="logo">
-                        <img src="media/img/LogoRAVIA.webp" alt="RAVIA FESTIVAL">
-                    </div>
-                    <div class="btn-entradas">ENTRADAS</div>
-                    
-                    <!-- menú hamburguesa desplegable -->
-                    <nav id="menu">
-                        <div>
-                            <i class="fas fa-bars" onclick="openMenu()"></i>
-                            <ul>
-                                <li>
-                                    <a href="#quienessomos" onclick="closeMenu()">LINE-UP</a>
-                                </li>
-                                <li>
-                                    <a href="#disenios" onclick="closeMenu()">ENTRADAS</a>
-                                </li>
-                                <li>
-                                    <a href="#contacto" onclick="closeMenu()">INFO</a>
-                                </li>
-                                <li>
-                                    <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <i class="fas fa-search"></i>
-                            <i class="far fa-star"></i>
-                            <i class="fas fa-shopping-cart"></i>
-                        </div>
-                        <h1>
-                            <a href="#"><span class="logo"></span></a>
-                        </h1>
-                    </nav>
+                <div class="logo">
+                    <img src="media/img/LogoRAVIA.webp" alt="RAVIA FESTIVAL">
+                </div>
+                <video autoplay muted loop playsinline>
+                    <source src="media/video/videopruebatiktok.mov" type="video/mp4">
+                </video>
+            </header>
+            <div>
+                <div class="entradas">
+                    <a href="#">ENTRADAS</a>
                 </div>
                     
-                    <video autoplay muted loop playsinline>
-                        <source src="media/video/pruebavideohome.mp4" type="video/mp4">
-                    </video>
-                </header>
-                
-                
+                <nav id="menu">
+                    <ul>
+                        <li>
+                            <a href="#" onclick="closeMenu()">LINE-UP</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="closeMenu()">ENTRADAS</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="closeMenu()">INFO</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
             <section class="experience">
-                <div><img src="media/img/mrGrillzy.webp" alt=""></div>
+                <div><img src="media/img/mrGrillzy.svg" alt=""></div>
             </section>
 
         </body>
