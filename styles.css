@@ -111,7 +111,7 @@ header video {
 
 #menu > ul > li > a,
 #menu > ul > li > i {
-    color: white;
+    color: var(--color-terciario);
     font-size: var(--tamano-texto-menu);
 }
 
@@ -126,13 +126,24 @@ header video {
 
 /* SECCTION COUNTDOWN */
 .countdown {
-    height: 50vh;
     background-color: var(--color-secundario);
-    position: relative; /* permite capas absolutas encima */
+    /* background-color: aqua; */
+    display: grid;
+    place-items: center;
+    /* padding: 8vh 2vw; */
+    min-height: 50vh;
+    position: relative;
+    overflow: visible;
+}
+
+.countdown-group {
+    position: relative;
+    width: min(90vw, 900px);
+    margin: 2vh 0;
 }
 
 .countdown .fest-countdown {
-    padding-top: 80px;
+    padding-top: 0;
     text-align: center;
     width: 100%;
     max-width: 900px;
@@ -153,64 +164,58 @@ header video {
     width: 100%;
     justify-content: center;
     align-items: center;
-    gap: 2.5rem;
-    margin-bottom: 40px;
+    gap: 2em;
+    margin-bottom: 2em;
     color: var(--color-primario);
     position: relative;
-    z-index: 2; /* por debajo del garabato */
+    z-index: 2;
+    font-size: clamp(12px, 1.2vw + 8px, 18px); /* clamp(min,normal,max) */
 }
 
 /* ilustración entre DÍAS y HORAS */
-.fest-countdown .mr-inline {
+.countdown-group .mr-inline {
     position: absolute;
-    top: 110%;
-    left: 25%;
+    top: 105%;
+    left: 22%;
     transform: translate(-50%, -58%);
-    width: 30vw;
-    min-width: 90px;
-    max-width: 160px;
+    width: clamp(90px, 22vw, 160px);
     pointer-events: none;
     z-index: 3;
 }
 
 .fest-box {
-    border: 3px solid var(--color-terciario);
-    border-radius: 12px;
-    padding: 18px 32px;
+    border: .2em solid var(--color-terciario);
+    border-radius: .8em;
+    padding: 1.2em 2em;
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 90px;
+    min-width: 0;
 }
 
 .fest-num {
     font-family: var(--font-primary);
-    font-size: 2.5rem;
-    margin-bottom: 6px;
+    font-size: 3em;
+    margin-bottom: .3em;
 }
 
-.fest-label {
-    font-size: 0.9rem;
+.fest-label { 
+    font-size: .9em; 
 }
 
-.fest-sep {
-    font-size: 2.5rem;
-    font-family: var(--font-primary);
+.fest-sep { 
+    font-size: 3em; 
+    font-family: var(--font-primary); 
 }
 
-/* garabato encima del contador (fuera de la sección) */
-#garabatoCountdown {
-    position: relative;
-    height: 0; /* no ocupa espacio */
-    z-index: 3; /* por encima de .fest-countdown */
-    pointer-events: none;
-}
-
-#garabatoCountdown img {
+/* garabato encima, dentro del grupo */
+.scribble-inline {
     position: absolute;
-    left: 500px;
-    top: -90px; /* más pegado a la cuenta atrás */
-    width: 340px;
+    right: -2%;
+    top: -30px;
+    width: clamp(180px, 28vw, 520px);
+    pointer-events: none;
+    z-index: 4;
 }
 
 
@@ -233,9 +238,53 @@ header video {
 
 /* Responsive ajustes Countdown */
 
-@media (max-width: 910px) {
-    .countdown {
+@media (max-width: 900px) {
+    /* .countdown {
         background-color: aqua;
+    } */
+    .countdown-group .mr-inline { 
+        left: 20%; 
+        top: 104%; 
+    }
 
+    .scribble-inline { 
+        right: -5%; 
+        top: -25px; 
+    }
+}
+
+@media (max-width: 600px) {
+    .fest-countdown { 
+        flex-direction: column; 
+        gap: 1.2em; 
+        align-items: center; 
+    }
+
+    .countdown-group .mr-inline { 
+        left: 30%; 
+        top: 50%; 
+        transform: translate(-50%, -60%); 
+        width: clamp(90px, 32vw, 160px); 
+    }
+
+    .scribble-inline { 
+        transform: scaleX(-1) rotate(-90deg);  /* para reflejarla y ponerla en vertical*/
+        right: 6%; 
+        top: 70px; 
+        width: clamp(160px, 56vw, 360px); 
+    }
+}
+
+@media (max-width: 400px) {
+    .scribble-inline { 
+        right: -1%; 
+        top: 50px; 
+    }
+}
+
+@media (max-width: 260px) {
+    .scribble-inline { 
+        right: -20%; 
+        top: 30px; 
     }
 }
