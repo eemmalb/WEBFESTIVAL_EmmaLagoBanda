@@ -31,72 +31,75 @@
                 <!-- PÁGINA DE CARGA - TODO -->
                 <img src="media/img/imagenIntro.webp" alt="">
     
-                <video autoplay muted loop playsinline>
-                    <source src="media/video/videoHome.mp4" type="video/mp4">
+                <div id="videoInicio">
+                    <video autoplay muted loop playsinline>
+                        <source src="media/video/videoHome.mp4" type="video/mp4">
+                </div>
             </header>
-
-            <!-- MENU -->
-            <div class="menu-icon" onclick="openMenu()">
-                <i class="fa-solid fa-bars"></i>
-            </div>
-            <nav id="menu">
-                <ul>
-                    <li>
-                        <a href="#" onclick="closeMenu()">LINE-UP</a>
-                    </li>
-                    <li>
-                        <a href="#" onclick="closeMenu()">ENTRADAS</a>
-                    </li>
-                    <li>
-                        <a href="#" onclick="closeMenu()">INFO</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
-                    </li>
-                </ul>
-            </nav>
-                
-            <!-- SECCIÓN CUENTA ATRÁS -->
-            <div id="garabatoCountdown">
-                <img src="media/img/garabatoCountdaown.webp" alt="garabato">
-            </div>
-            <section class="countdown">
-                <div>
-                    <!-- <h3 class="sect-title">EL FESTIVAL COMIENZA EN:</h3> -->
-
-                    <div class="fest-countdown">
-                        <div class="fest-box">
-                            <span class="fest-num">30</span>
-                            <span class="fest-label">DÍAS</span>
-                        </div>
-                        <span class="fest-sep">:</span>
-                    <!-- ilustración entre DÍAS y HORAS -->
-                    <img class="mr-inline" src="media/img/mrGrillzy-right.webp" alt="ilustración">
-                        <div class="fest-box">
-                            <span class="fest-num">00</span>
-                            <span class="fest-label">HORAS</span>
-                        </div>
-                        <span class="fest-sep">:</span>
-                        <div class="fest-box">
-                            <span class="fest-num">00</span>
-                            <span class="fest-label">MIN</span>
-                        </div>
-                        <span class="fest-sep">:</span>
-                        <div class="fest-box">
-                            <span class="fest-num">00</span>
-                            <span class="fest-label">SEG</span>
+            <!-- todo (menos la imagen y el video del inicio) lo meto en un div wrapper para que nada de la web llegue a tocar el margen de la pantalla -->
+            <div class="wrapper">
+                <!-- MENU -->
+                <div class="menu-icon" onclick="openMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <nav id="menu">
+                    <ul>
+                        <li>
+                            <a href="#" onclick="closeMenu()">LINE-UP</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="closeMenu()">ENTRADAS</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="closeMenu()">INFO</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+                        </li>
+                    </ul>
+                </nav>
+                    
+                <!-- SECCIÓN CUENTA ATRÁS -->
+                <section class="countdown">
+                    <div>
+                        <!-- <h3 class="sect-title">EL FESTIVAL COMIENZA EN:</h3> -->
+                        
+                        <div class="fest-countdown">
+                            <div id="garabatoCountdown">
+                                <img src="media/img/garabatoCountdaown.webp" alt="garabato">
+                            </div>
+                            <div class="fest-box">
+                                <span class="fest-num">30</span>
+                                <span class="fest-label">DÍAS</span>
+                            </div>
+                            <span class="fest-sep">:</span>
+                        <!-- ilustración entre DÍAS y HORAS -->
+                        <img class="mr-inline" src="media/img/mrGrillzy-right.webp" alt="ilustración">
+                            <div class="fest-box">
+                                <span class="fest-num">00</span>
+                                <span class="fest-label">HORAS</span>
+                            </div>
+                            <span class="fest-sep">:</span>
+                            <div class="fest-box">
+                                <span class="fest-num">00</span>
+                                <span class="fest-label">MIN</span>
+                            </div>
+                            <span class="fest-sep">:</span>
+                            <div class="fest-box">
+                                <span class="fest-num">00</span>
+                                <span class="fest-label">SEG</span>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <!-- garabatos countdown -->
-                <!-- <img src="media/img/mrGrillzy-right.webp" alt="ilustración">
-                <img src="media/img/garabatoCountdaown.webp" alt="garabato"> -->
-            </section>
+                    <!-- garabatos countdown -->
+                    <!-- <img src="media/img/mrGrillzy-right.webp" alt="ilustración">
+                    <img src="media/img/garabatoCountdaown.webp" alt="garabato"> -->
+                </section>
+    
+                <!-- <section class="experience">
+                </section> -->
 
-            <!-- <section class="experience">
-            </section> -->
-
-
+            </div>
         </body>
 
     </html>

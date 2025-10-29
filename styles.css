@@ -26,7 +26,14 @@ a {
     text-decoration: none;
 }
 
-section {
+.wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+    background-color: var(--color-secundario);
+}
+
+body {
     background-color: var(--color-secundario);
 }
 
@@ -39,19 +46,32 @@ video {
 }
 
 /* HEADER */
+header { position: relative; }
+
 header img {
-    height: 100vh;
+    height: 101vh;
+    display: block;
+    position: relative;
+    z-index: 1; /* por encima del video */
 }
 
-header video {
+#videoInicio {
     height: 100vh;
-    position: fixed;
+    position: absolute; /* se coloca respecto al header */
     top: 0;
     left: 0;
     width: 100%;
+    overflow: hidden; /* recorta el video al alto del contenedor */
+    z-index: 0;
+}
+
+header video {
+    position: absolute;
+    top: 0;
+    left: 0;
     height: 100%;
+    width: 100%;
     object-fit: cover;
-    z-index: -1;
 }
 
 
@@ -61,7 +81,7 @@ header video {
     top: var(--distancia-iconos);
     right: var(--distancia-iconos);
     font-size: var(--tamano-texto-menu);
-    color: var(--color-secundario);
+    color: var(--color-primario);
     z-index: 10;
 }
 
@@ -130,6 +150,7 @@ header video {
 
 .fest-countdown {
     display: flex;
+    width: 100%;
     justify-content: center;
     align-items: center;
     gap: 2.5rem;
@@ -187,9 +208,9 @@ header video {
 
 #garabatoCountdown img {
     position: absolute;
-    right: 22%;
-    top: 50px; /* más pegado a la cuenta atrás */
-    width: 27vw;
+    left: 500px;
+    top: -90px; /* más pegado a la cuenta atrás */
+    width: 340px;
 }
 
 
@@ -205,4 +226,16 @@ header video {
 
 .experience video {
     width: 30%;
+}
+
+
+
+
+/* Responsive ajustes Countdown */
+
+@media (max-width: 910px) {
+    .countdown {
+        background-color: aqua;
+
+    }
 }
