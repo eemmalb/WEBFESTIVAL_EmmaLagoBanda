@@ -101,10 +101,14 @@ header video {
     top: var(--distancia-iconos);
 }
 
+
+
+
 /* SECCTION COUNTDOWN */
 .countdown {
     height: 50vh;
     background-color: var(--color-secundario);
+    position: relative; /* permite capas absolutas encima */
 }
 
 .countdown .fest-countdown {
@@ -115,18 +119,6 @@ header video {
     margin-left: auto;
     margin-right: auto;
 }
-
-#garabatoCountdown {
-    background-color: aqua;
-    display: flex;
-    justify-content: end;
-}
-
-#garabatoCountdown img {
-    width: 30%;
-}
-
-
 
 .sect-title {
     font-family: var(--font-primary);
@@ -143,6 +135,21 @@ header video {
     gap: 2.5rem;
     margin-bottom: 40px;
     color: var(--color-primario);
+    position: relative;
+    z-index: 2; /* por debajo del garabato */
+}
+
+/* ilustración entre DÍAS y HORAS */
+.fest-countdown .mr-inline {
+    position: absolute;
+    top: 110%;
+    left: 25%;
+    transform: translate(-50%, -58%);
+    width: 30vw;
+    min-width: 90px;
+    max-width: 160px;
+    pointer-events: none;
+    z-index: 3;
 }
 
 .fest-box {
@@ -169,6 +176,22 @@ header video {
     font-size: 2.5rem;
     font-family: var(--font-primary);
 }
+
+/* garabato encima del contador (fuera de la sección) */
+#garabatoCountdown {
+    position: relative;
+    height: 0; /* no ocupa espacio */
+    z-index: 3; /* por encima de .fest-countdown */
+    pointer-events: none;
+}
+
+#garabatoCountdown img {
+    position: absolute;
+    right: 22%;
+    top: 50px; /* más pegado a la cuenta atrás */
+    width: 27vw;
+}
+
 
 
 
