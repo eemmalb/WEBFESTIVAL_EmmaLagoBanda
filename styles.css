@@ -3,13 +3,15 @@
 
 /* VARIABLES */
 :root {
-    --color-primario: #000000;
-    --color-secundario: #cc0000;
+    --color-primario: #D22B51;
+    --color-secundario: #000000;
+    --color-terciario: #ffffff;
     --margenes-texto: 1rem 0;
     --borde: var(--color-primario) 0.2rem solid;
     --interlineado: 1.5em;
     --distancia-iconos: 1rem;
     --tamano-texto-menu: 2rem;
+    --font-primary: "Montserrat", sans-serif;
 }
 
 /* reseteamos los estilos del navegador */
@@ -25,7 +27,7 @@ a {
 }
 
 section {
-    background-color: var(--color-primario);
+    background-color: var(--color-secundario);
 }
 
 /* con este selector y propiedades conseguimos que las imagenes se adapten al tamaño del elemento que las contiene y sean responsive */
@@ -51,34 +53,6 @@ header video {
     object-fit: cover;
     z-index: -1;
 }
-
-/* 
-.logo-entradas {
-    position: fixed;
-    display: flex;
-    padding: 12px ;
-    width: 95vw;
-    justify-content: space-between;
-    z-index: 10;
-}
-
-.entradas {
-    margin-right: 1rem;
-}
-.entradas a {
-    color: var(--color-especial);
-    background-color: var(--color-secundario);
-    padding: 1rem;
-    display: flex;
-    align-items: center;
-    border-radius: 3rem;
-}
-
-.logo {
-    width: 12vw;
-    min-width: 90px;
-} */
-
 
 
 /* MENU DE HAMBURGUESA DESPLEGABLE */
@@ -130,17 +104,80 @@ header video {
 /* SECCTION COUNTDOWN */
 .countdown {
     height: 50vh;
-    background-color: var(--color-primario);
+    background-color: var(--color-secundario);
+}
+
+.countdown .fest-countdown {
+    padding-top: 80px;
+    text-align: center;
+    width: 100%;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#garabatoCountdown {
+    background-color: aqua;
+    display: flex;
+    justify-content: end;
+}
+
+#garabatoCountdown img {
+    width: 30%;
+}
+
+
+
+.sect-title {
+    font-family: var(--font-primary);
+    color: var(--color-primario);
+    font-size: 2.1rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+.fest-countdown {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--color-primario);
+}
+
+.fest-box {
+    border: 3px solid var(--color-terciario);
+    border-radius: 12px;
+    padding: 18px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 90px;
+}
+
+.fest-num {
+    font-family: var(--font-primary);
+    font-size: 2.5rem;
+    margin-bottom: 6px;
+}
+
+.fest-label {
+    font-size: 0.9rem;
+}
+
+.fest-sep {
+    font-size: 2.5rem;
+    font-family: var(--font-primary);
 }
 
 
 
 /* SECCTION EXPERIENCE */
 .experience {
-    height: 100vh;
-    background-color: var(--color-primario);
+    height: 500vh;
     display: flex;
     justify-content: center;
+    background-color: #D22B51;
 }
 
 .experience video {
