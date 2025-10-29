@@ -3,9 +3,8 @@
 
 /* VARIABLES */
 :root {
-    --color-primario: #2B2622;
-    --color-secundario: #ffffff;
-    --color-especial: #57B0A3;
+    --color-primario: #000000;
+    --color-secundario: #cc0000;
     --margenes-texto: 1rem 0;
     --borde: var(--color-primario) 0.2rem solid;
     --interlineado: 1.5em;
@@ -38,10 +37,22 @@ video {
 }
 
 /* HEADER */
-header {
-    height: 80vh;
+header img {
+    height: 100vh;
 }
 
+header video {
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* 
 .logo-entradas {
     position: fixed;
     display: flex;
@@ -66,17 +77,9 @@ header {
 .logo {
     width: 12vw;
     min-width: 90px;
-}
+} */
 
-video {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
+
 
 /* MENU DE HAMBURGUESA DESPLEGABLE */
 .menu-icon {
@@ -124,20 +127,22 @@ video {
     top: var(--distancia-iconos);
 }
 
+/* SECCTION COUNTDOWN */
+.countdown {
+    height: 50vh;
+    background-color: var(--color-primario);
+}
+
+
+
 /* SECCTION EXPERIENCE */
 .experience {
-    position: relative;
-    height: 300vh;
+    height: 100vh;
+    background-color: var(--color-primario);
     display: flex;
     justify-content: center;
 }
 
-.experience div:first-child {
-    position: absolute;
-    bottom: 100%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 22vw;
-    min-width: 270px;
-    margin-bottom: -100px;
+.experience video {
+    width: 30%;
 }
