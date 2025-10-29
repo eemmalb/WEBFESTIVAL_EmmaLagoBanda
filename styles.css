@@ -46,13 +46,19 @@ video {
 }
 
 /* HEADER */
-header { position: relative; }
+header { 
+    position: relative; 
+}
 
 header img {
     height: 101vh;
     display: block;
     position: relative;
     z-index: 1; /* por encima del video */
+}
+
+header #imagenIntroMovil {
+    display: none;
 }
 
 #videoInicio {
@@ -254,6 +260,14 @@ header video {
 }
 
 @media (max-width: 600px) {
+    header #imagenIntroMovil {
+        display: block;
+    }
+
+    header > img {
+        display: none;
+    }
+
     .fest-countdown { 
         flex-direction: column; 
         gap: 1.2em; 
@@ -270,7 +284,7 @@ header video {
     .scribble-inline { 
         transform: scaleX(-1) rotate(-90deg);  /* para reflejarla y ponerla en vertical*/
         right: 6%; 
-        top: 70px; 
+        top: 100px; 
         width: clamp(160px, 56vw, 360px); 
     }
 }
