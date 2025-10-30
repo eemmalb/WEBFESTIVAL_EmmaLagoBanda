@@ -1,5 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* importar mis propias fuentes */
+@font-face {
+    font-family: "DrukWideBold";
+    src: url("./media/fonts/DrukWide-Bold-Trial.woff2") format("woff2"),
+         url("./media/fonts/DrukWide-Bold-Trial.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "EmmaRegular";
+    src: url("./media/fonts/Emma-Regular.woff") format("woff"),
+         url("./media/fonts/Emma_caractesp-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 /* VARIABLES */
 :root {
@@ -12,6 +30,9 @@
     --distancia-iconos: 1rem;
     --tamano-texto-menu: 2rem;
     --font-primary: "Montserrat", sans-serif;
+    --font-secondary: "DrukWideBold", sans-serif;
+    --font-hand: "EmmaRegular", sans-serif;
+
 }
 
 /* reseteamos los estilos del navegador */
@@ -19,7 +40,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;  
-    font-family: "Montserrat", sans-serif;
+    font-family: var(--font-primary);
 }
 
 a {
@@ -157,14 +178,6 @@ header video {
     margin-right: auto;
 }
 
-.sect-title {
-    font-family: var(--font-primary);
-    color: var(--color-primario);
-    font-size: 2.1rem;
-    margin-bottom: 40px;
-    letter-spacing: 2px;
-}
-
 .fest-countdown {
     display: flex;
     width: 100%;
@@ -200,13 +213,14 @@ header video {
 }
 
 .fest-num {
-    font-family: var(--font-primary);
-    font-size: 3em;
+    font-family: var(--font-secondary);
+    font-size: 2em;
     margin-bottom: .3em;
 }
 
 .fest-label { 
-    font-size: .9em; 
+    font-family: var(--font-secondary);
+    font-size: .6em; 
 }
 
 .fest-sep { 
@@ -223,6 +237,140 @@ header video {
     pointer-events: none;
     z-index: 4;
 }
+
+
+/* MARQUEE */
+.marquee {
+    margin: 80px 0;
+    overflow: clip;
+}
+
+.group {
+    display: flex;
+    padding-left: 4.8rem;
+    gap: 4.8rem;
+    width: max-content;
+}
+
+/* rtl = right to left */
+.group.rtl {
+    animation: marquee-move-text 5s linear infinite forwards;
+    gap: clamp(2rem, 4vw, 4rem);
+    padding-inline: clamp(2rem, 4vw, 4.8rem);
+}
+
+.marquee-item {
+    flex: 0 0 auto;
+    display: block;
+    border-radius: 1.5rem;
+    overflow: hidden;
+}
+
+.marquee-item img {
+    display: block;
+    width: clamp(150px, 18vw, 240px);
+    /* object-fit: cover; */
+}
+
+/* DEFINICIÓN DE LA ANIMACIÓN */
+@keyframes marquee-move-text {
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+
+
+/* SECCIÓN ACTUACIONES */
+.performances {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    color: var(--color-primario);
+}
+
+.perf-board {
+    width: min(1000px, 92vw);
+    padding: 3rem;
+    text-align: center;
+}
+
+.perf-title {
+    text-align: center;
+    font-size: .95rem;
+    letter-spacing: .14em;
+    opacity: .9;
+    margin: 2rem 0;
+}
+
+.perf-cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    position: relative;
+    border: 3px solid var(--color-primario);
+    padding: 2rem;
+    /* efecto borde neón */
+    box-shadow:
+        0 0 12px var(--color-primario),
+        0 0 32px rgba(210, 43, 81, 0.6),
+        0 0 48px rgba(210, 43, 81, 0.4);
+}
+
+/* esto selecciona un pseudo-elemento antes del contenido real del elemento con la clase .perf-cols */
+.perf-cols::before {
+    content: ""; /* esto crea el pseudo-elemento (la línea) */
+    position: absolute;
+    top: 0; 
+    bottom: 0; 
+    left: 50%;
+    width: 3px; 
+    background: var(--color-primario);
+    margin: 2rem;
+}
+
+.perf-col { 
+    list-style: none; 
+    padding: 0; 
+    margin: 0; 
+}
+
+.perf-col span li {
+    font-size: clamp(0.6rem, 1.4vw, 1.6rem);
+}
+
+.perf-col li {
+    font-family: var(--font-primary);
+    font-size: clamp(1.4rem, 2.2vw, 2.4rem);
+    line-height: 2;
+}
+.perf-col .sub {
+    font-size: clamp(.82rem, .9vw, 1rem);
+    letter-spacing: .08em;
+    opacity: .85;
+    margin-top: .5rem;
+}
+
+@media (max-width: 800px) {
+    .perf-cols { 
+        grid-template-columns: 1fr; 
+    }
+    .perf-cols::before { 
+        /* display: none;  */
+        margin: 2rem 0 0 0 ;
+        transform: rotate(-90deg);
+    }
+    .perf-col { 
+        text-align: center; 
+    }
+}
+
+@media (max-width: 550px) {
+    .perf-cols::before { 
+        display: none; 
+    }
+}
+
 
 
 
