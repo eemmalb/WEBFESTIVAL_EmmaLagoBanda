@@ -22,7 +22,7 @@
 /* VARIABLES */
 :root {
     --color-primario: #D22B51;
-    --color-secundario: #000000;
+    --color-secundario: #ffffff;
     --color-terciario: #ffffff;
     --margenes-texto: 1rem 0;
     --borde: var(--color-primario) 0.2rem solid;
