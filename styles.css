@@ -21,7 +21,7 @@
 
 /* VARIABLES */
 :root {
-    --color-primario: #D22B51;
+    --color-primario: #d02e27;
     --color-secundario: #ffffff;
     --color-terciario: #ffffff;
     --margenes-texto: 1rem 0;
@@ -148,7 +148,38 @@ header video {
     top: var(--distancia-iconos);
 }
 
+/* MARQUEE LOGOS*/
+#MarqueeLogos {
+    height: 100px;
+    margin: 0;
+    padding-inline: clamp(1.5rem, 5vw, 4rem);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: visible;
+}
 
+#MarqueeLogos .group {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: clamp(1rem, 3vw, 2.5rem);
+    padding: 0;
+}
+
+#MarqueeLogos .marquee-item {
+    flex: 0 1 clamp(110px, 14vw, 160px);
+    overflow: visible;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#MarqueeLogos .marquee-item img {
+    width: 100%;
+    max-height: clamp(48px, 6vw, 72px);
+    object-fit: contain;
+}
 
 
 /* SECCTION COUNTDOWN */
@@ -203,7 +234,7 @@ header video {
 }
 
 .fest-box {
-    border: .2em solid var(--color-terciario);
+    border: .2em solid #d4cfcd;
     border-radius: .8em;
     padding: 1.2em 2em;
     display: flex;
