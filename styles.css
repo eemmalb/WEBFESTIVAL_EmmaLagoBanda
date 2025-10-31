@@ -249,7 +249,7 @@ header video {
 }
 
 .intro-lead {
-    font-size: 1.2rem;
+    font-size: clamp(0.67rem, 2.2vw, 1.1rem);
 }
 
 .intro-lead span {
@@ -332,7 +332,7 @@ header video {
 
 .fest-box {
     border: .2em solid #d4cfcd;
-    border-radius: .8em;
+    border-radius: .2em;
     padding: 1.2em 2em;
     display: flex;
     flex-direction: column;
@@ -431,6 +431,98 @@ header video {
     }
 }
 
+
+/* GALERÍA */
+.gallery {
+    padding: clamp(3rem, 8vw, 6rem) 0;
+}
+
+.gallery-grid {
+    width: min(1080px, 90vw);
+    margin: 0 auto;
+    display: flex;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: flex-start;
+}
+
+.gallery-column {
+    display: flex;
+    flex: 1 1 0;
+    flex-direction: column;
+    gap: clamp(1.4rem, 4vw, 3rem);
+}
+
+.gallery-column--center {
+    margin-top: clamp(1.2rem, 4vw, 3rem);
+}
+
+.gallery-column--right {
+    margin-top: clamp(2.2rem, 6vw, 4.5rem);
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2.4rem;
+    box-shadow:
+        0 25px 45px rgba(0, 0, 0, 0.35),
+        0 0 35px rgba(208, 46, 39, 0.35);
+}
+
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) contrast(1.05);
+    transition: transform 0.8s ease, filter 0.6s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+    filter: none;
+}
+
+.gallery-item--tall {
+    aspect-ratio: 3 / 4.2;
+}
+
+.gallery-item--wide {
+    aspect-ratio: 5 / 6;
+}
+
+.gallery-item--offset {
+    aspect-ratio: 5 / 7;
+}
+
+@media (max-width: 900px) {
+    .gallery-grid {
+        flex-wrap: wrap;
+    }
+
+    .gallery-column {
+        flex: 1 1 calc(50% - clamp(1.5rem, 4vw, 3.5rem));
+        margin-top: 0;
+    }
+
+    .gallery-column--right {
+        order: 3;
+    }
+}
+
+@media (max-width: 600px) {
+    .gallery-grid {
+        flex-direction: column;
+    }
+
+    .gallery-column {
+        flex: 1 1 100%;
+    }
+
+    .gallery-item {
+        border-radius: 1.6rem;
+    }
+}
 
 
 /* MARQUEE */
@@ -580,7 +672,3 @@ header video {
 .experience video {
     width: 30%;
 }
-
-
-
-
