@@ -433,37 +433,28 @@ header video {
 
 
 /* GALERÍA */
-.gallery {
-    padding: clamp(3rem, 8vw, 6rem) 0;
+section.gallery {
+    position: relative;
+    padding: clamp(5rem, 12vw, 9rem) 0 clamp(6rem, 14vw, 10rem);
 }
 
 .gallery-grid {
-    width: min(1080px, 90vw);
+    width: min(1080px, 92vw);
     margin: 0 auto;
-    display: flex;
-    gap: clamp(1.5rem, 4vw, 3.5rem);
-    align-items: flex-start;
-}
-
-.gallery-column {
-    display: flex;
-    flex: 1 1 0;
-    flex-direction: column;
-    gap: clamp(1.4rem, 4vw, 3rem);
-}
-
-.gallery-column--center {
-    margin-top: clamp(1.2rem, 4vw, 3rem);
-}
-
-.gallery-column--right {
-    margin-top: clamp(2.2rem, 6vw, 4.5rem);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.8rem, 5vw, 3.5rem);
+    justify-items: center;
+    position: relative;
+    z-index: 1;
 }
 
 .gallery-item {
     position: relative;
+    width: 100%;
+    max-width: clamp(220px, 30vw, 320px);
+    aspect-ratio: 1 / 1;
     overflow: hidden;
-    border-radius: 2.4rem;
     box-shadow:
         0 25px 45px rgba(0, 0, 0, 0.35),
         0 0 35px rgba(208, 46, 39, 0.35);
@@ -483,52 +474,153 @@ header video {
     filter: none;
 }
 
-.gallery-item--tall {
-    aspect-ratio: 3 / 4.2;
+.w-scribble {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: min(1080px, 92vw);
+    height: 100%;
 }
 
-.gallery-item--wide {
-    aspect-ratio: 5 / 6;
+.w-scribble img,
+#scribble-gallery {
+    position: absolute;
 }
 
-.gallery-item--offset {
-    aspect-ratio: 5 / 7;
+#scribble-gallery {
+    transform: rotate(-90deg);
+    width: clamp(120px, 16vw, 200px);
+    top: 52%;
+    left: -12%;
 }
+
+.w-scribble #s-where {
+    width: clamp(120px, 18vw, 190px);
+    top: 7%;
+    left: 10%;
+    transform: translateX(-50%) rotate(-6deg);
+}
+
+.w-scribble #s-who {
+    width: clamp(110px, 16vw, 180px);
+    top: 8%;
+    left: 60%;
+    transform: translateX(-50%) rotate(6deg);
+}
+
+.w-scribble #s-what {
+    width: clamp(110px, 16vw, 180px);
+    top: 46%;
+    right: 3%;
+    transform: rotate(-2deg);
+}
+
+.w-scribble #s-when {
+    width: clamp(110px, 18vw, 190px);
+    bottom: 8%;
+    left: 17%;
+    transform: rotate(-8deg);
+}
+
 
 @media (max-width: 900px) {
     .gallery-grid {
-        flex-wrap: wrap;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
-    .gallery-column {
-        flex: 1 1 calc(50% - clamp(1.5rem, 4vw, 3.5rem));
-        margin-top: 0;
+    #scribble-gallery {
+        width: clamp(100px, 18vw, 170px);
+        left: -18%;
+        top: 55%;
     }
 
-    .gallery-column--right {
-        order: 3;
+    .w-scribble #s-who {
+        left: 90%;
+        top: 4%;
+    }
+
+    .w-scribble #s-what {
+        right: 40%;
+        top: 50%;
+    }
+
+    .w-scribble #s-when {
+        left: 30%;
+        top: 90%;
+    }
+
+    .w-scribble #s-where {
+        left: 22%;
+        top: 4%;
     }
 }
 
-@media (max-width: 600px) {
-    .gallery-grid {
-        flex-direction: column;
+@media (max-width: 700px) {
+    section.gallery {
+        padding: clamp(3rem, 9vw, 5rem) 0;
     }
 
-    .gallery-column {
-        flex: 1 1 100%;
+    .gallery-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: clamp(1.4rem, 6vw, 2.6rem);
     }
 
     .gallery-item {
-        border-radius: 1.6rem;
+        max-width: clamp(260px, 80vw, 360px);
+        aspect-ratio: 4 / 1;
+    }
+
+    #scribble-gallery {
+        display: none;
+    }
+
+    .w-scribble {
+        margin: 0 auto clamp(2rem, 6vw, 3rem);
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: clamp(1rem, 4vw, 1.8rem);
+        justify-items: center;
+        pointer-events: none;
+    }
+
+    .w-scribble img {
+        width: clamp(120px, 38vw, 170px);
+    }
+        
+    .w-scribble #s-who {
+        left: 78%;
+        top: 18%;
+    }
+
+    .w-scribble #s-what {
+        right: 7%;
+        top: 48%;
+    }
+
+    .w-scribble #s-when {
+        left: 6%;
+        top: 78%;
+    }
+
+    .w-scribble #s-where {
+        left: 21%;
+        top: 1%;
     }
 }
 
+@media (max-width: 450px) {
+    .w-scribble {
+        display: none;
+    }
+}
 
 /* MARQUEE */
 .marquee {
     margin: 80px 0;
     overflow: clip;
+    display: none;
 }
 
 .group {
@@ -642,9 +734,9 @@ header video {
         grid-template-columns: 1fr; 
     }
     .perf-cols::before { 
-        /* display: none;  */
-        margin: 2rem 0 0 0 ;
-        transform: rotate(-90deg);
+        display: none; 
+        /* margin: 2rem 0 0 0 ;
+        transform: rotate(-90deg); */
     }
     .perf-col { 
         text-align: center; 
