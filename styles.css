@@ -181,6 +181,39 @@ header video {
     object-fit: contain;
 }
 
+@media (max-width: 600px) {
+    #MarqueeLogos {
+        height: auto;
+        flex-wrap: wrap;
+        padding-inline: clamp(1rem, 6vw, 2rem);
+        margin-bottom: 20px;
+    }
+
+    #MarqueeLogos .group {
+        --logo-gap: clamp(0.75rem, 5vw, 1.25rem);
+        flex-wrap: wrap;
+        justify-content: center;
+        column-gap: var(--logo-gap);
+        row-gap: var(--logo-gap);
+        width: 100%;
+        max-width: 540px;
+    }
+
+    /* para calcular cuanto tiene que ocupar cada logo y el espacio entre logos si quiero que en total ocupen todo el ancho de la fila */
+    #MarqueeLogos .marquee-item {
+        flex: 0 0 calc((100% - 5 * var(--logo-gap)) / 6);
+    }
+    /* lo mismo pero entre 5 porque en la fila de abajo hay 5 logos (ya que en total son 11) */
+    #MarqueeLogos .marquee-item:nth-child(n+7) {
+        flex-basis: calc((100% - 4 * var(--logo-gap)) / 5);
+    }
+
+    #MarqueeLogos .marquee-item img {
+        width: 100%;
+        max-height: clamp(60px, 12vw, 90px);
+    }
+}
+
 
 /* SECCTION COUNTDOWN */
 .countdown {
