@@ -20,6 +20,54 @@
 
 
 
+// COUNTDOWN FUNCIONAL
+function initCountdown() {
+    const targetDate = new Date("2026-02-20T00:00:00"); // ajusta a la fecha/hora del evento
+    const els = {
+        days: document.getElementById("countdown-days"),
+        hours: document.getElementById("countdown-hours"),
+        minutes: document.getElementById("countdown-minutes"),
+        seconds: document.getElementById("countdown-seconds"),
+    };
+
+    if (!els.days || !els.hours || !els.minutes || !els.seconds) {
+        return;
+    }
+
+    let timerId = null;
+
+    function updateCountdown() {
+        const now = new Date();
+        let diff = targetDate - now;
+
+        if (diff <= 0) {
+            diff = 0;
+            if (timerId !== null) {
+                clearInterval(timerId);
+            }
+        }
+
+        const totalSeconds = Math.floor(diff / 1000);
+        const seconds = totalSeconds % 60;
+        const totalMinutes = Math.floor(totalSeconds / 60);
+        const minutes = totalMinutes % 60;
+        const totalHours = Math.floor(totalMinutes / 60);
+        const hours = totalHours % 24;
+        const days = Math.floor(totalHours / 24);
+
+        els.days.textContent = String(days).padStart(2, "0");
+        els.hours.textContent = String(hours).padStart(2, "0");
+        els.minutes.textContent = String(minutes).padStart(2, "0");
+        els.seconds.textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    timerId = setInterval(updateCountdown, 1000);
+}
+
+document.addEventListener("DOMContentLoaded", initCountdown);
+
+
 
 // MENU DE HAMBURGUESA DESPLEGABLE
 /**
