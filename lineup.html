@@ -1,17 +1,30 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-    <title>SHOOK FEST</title>
-    <meta charset="utf-8">
-    <link href="css/styles.css" rel="stylesheet" type="text/css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Titillium+Web&display=swap" rel="stylesheet">
-    <link href="img/favicon.png" rel="icon" type="image/png">
-    <script src="https://kit.fontawesome.com/c3fd22b8e3.js" crossorigin="anonymous"></script>
-    <script src="js/script.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
+    <html lang="es">
+        <head>
+            <title>RAVIAFEST</title>
+            <meta charset="utf-8">
+            
+            <!-- CARGAMOS ARCHIVO EXTERNO DE CSS -->
+            <link href="styles.css" rel="stylesheet" type="text/css">
+
+
+            <link href="media/img/favicon.png" rel="icon" type="image/png">
+            <!--ICONOS DE FONT AWESOME-->
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+            
+            <!-- importacion de la libreria, hay que importar la libreria antes que nuestro archivo js  -->
+            <!-- el link da los estilos  -->
+            <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+            <!-- el script da las animaciones -->
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            
+            <!-- CARGAMOS ARCHIVO EXTERNO DE JS -->
+            <script src="js/script.js"></script>
+            <script src="https://kit.fontawesome.com/c3fd22b8e3.js" crossorigin="anonymous"></script>
+    
+            <meta name="viewport" content="width=device-width, initial-scale=1">
+        </head>
 <body>
     
     <header>
@@ -44,8 +57,93 @@
             </h1>
         </nav>
     </header>
-    <section id="layout-artistas">
 
+    <!-- MARQUEE ARTISTAS -->
+    <div class="marquee">
+        <div class="group rtl">
+            <figure class="marquee-item">
+                <img src="media/img/MarqueeTravissott.webp" alt="TRAVIS SCOTT">
+            </figure>
+            <figure class="marquee-item">
+                <img src="media/img/MarqueeLilwayne.webp" alt="LIL WAYNE">
+            </figure>                        
+            <figure class="marquee-item">
+                <img src="media/img/MarqueePlayboicarti.webp" alt="PLAYBOI CARTI">
+            </figure>                        
+            <figure class="marquee-item">
+                <img src="media/img/MarqueeLiluzivert.webp" alt="LIL UZI VERT">
+            </figure>                        
+            <figure class="marquee-item">
+                <img src="media/img/MarqueeKaytranada.webp" alt="KAYTRANADA">
+            </figure>                        
+            <figure class="marquee-item">
+                <img src="media/img/MarqueeYoungthug.webp" alt="YOUNG THUG">
+            </figure>      
+            <figure class="marquee-item">
+                <img src="media/img/Marquee21savage.webp" alt="21 SAVAGE">
+            </figure>                    
+            <figure class="marquee-item">
+                <img src="media/img/MarqueeFuture.webp" alt="FUTURE">
+            </figure>  
+            <figure class="marquee-item">
+                <img src="media/img/MarqueeWizkhalifa.webp" alt="WIZ KHALIFA">
+            </figure>  
+            <figure class="marquee-item">
+                <img src="media/img/MarqueeTravissott.webp" alt="TRAVIS SCOTT">
+            </figure>
+            <figure class="marquee-item">
+                <img src="media/img/MarqueeLilwayne.webp" alt="LIL WAYNE">
+            </figure>                        
+            <figure class="marquee-item">
+                <img src="media/img/MarqueePlayboicarti.webp" alt="PLAYBOI CARTI">
+            </figure>                        
+            <figure class="marquee-item">
+                <img src="media/img/MarqueeLiluzivert.webp" alt="LIL UZI VERT">
+            </figure>                        
+            <figure class="marquee-item">
+                <img src="media/img/MarqueeKaytranada.webp" alt="KAYTRANADA">
+            </figure>                        
+            <figure class="marquee-item">
+                <img src="media/img/MarqueeYoungthug.webp" alt="YOUNG THUG">
+            </figure>      
+            <figure class="marquee-item">
+                <img src="media/img/Marquee21savage.webp" alt="21 SAVAGE">
+            </figure>                    
+            <figure class="marquee-item">
+                <img src="media/img/MarqueeFuture.webp" alt="FUTURE">
+            </figure>  
+            <figure class="marquee-item">
+                <img src="media/img/MarqueeWizkhalifa.webp" alt="WIZ KHALIFA">
+            </figure>
+        </div>
+    </div>
+
+<div class="wrapper">
+    <!-- SECCIÓN ACTUACIONES -->
+    <section class="performances">
+        <div class="perf-board">
+            <h2 class="perf-title">ACTUACIONES MUSICALES</h2>
+            <div class="perf-cols">
+                <ul class="perf-col left">
+                    <li>TRAVIS SCOTT</li>
+                    <li>LIL WAYNE</li>
+                    <li>PLAYBOI CARTI</li>
+                    <li>LIL UZI VERT</li>
+                    <span><li>KAYTRANADA (DJ SET)</li></span>
+
+                </ul>
+                <ul class="perf-col right">
+                    <li>YOUNG THUG</li>
+                    <li>21 SAVAGE</li>
+                    <li>FUTURE</li>
+                    <li>WIZ KHALIFA</li>
+                </ul>
+            </div>
+            <h2 class="perf-title">Y MUCHOS MÁS</h2>
+        </div>
     </section>
+
+</div>
+
 
 </body>
