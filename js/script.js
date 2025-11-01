@@ -65,7 +65,10 @@ function initCountdown() {
     timerId = setInterval(updateCountdown, 1000);
 }
 
-document.addEventListener("DOMContentLoaded", initCountdown);
+document.addEventListener("DOMContentLoaded", function () {
+    initCountdown();
+    initMenuScrollBehavior();
+});
 
 
 
@@ -73,11 +76,16 @@ document.addEventListener("DOMContentLoaded", initCountdown);
 /**
  * Abre el menú
  */
- function openMenu() {
+function openMenu() {
     console.log("Función openMenu");
     // Busca el elemento con id "menu", accede a su primer hijo y luego al último hijo de ese elemento
     // Cambia left a 0 para que se despace hacia la derecha y sea visible
     document.getElementById("menu").style.left = "0";
+    document.body.classList.add("menu-open");
+    var menuBar = document.querySelector(".menu");
+    if (menuBar) {
+        menuBar.classList.add("is-visible");
+    }
 }
 
 
@@ -89,14 +97,62 @@ function closeMenu() {
     // Busca el elemento con id "menu", accede a su primer hijo y luego al último hijo de ese elemento
     // Cambia left a -100% para que se desplace hacia la izquierda y no sea visible
     document.getElementById("menu").style.left = "-100%";
+    document.body.classList.remove("menu-open");
 }
 
 
-/**
- * Busca el elemento con id "modal" y lo oculta estableciendo su estilo de display a "none"
- */
-function cerrarModal() {
-    document.getElementById("modal-imagen").style.display = "none";
+
+
+// Para que el menu se muestre o no según el scroll
+function initMenuScrollBehavior() {
+    var menuBar = document.querySelector(".menu");
+    if (!menuBar) {
+        return;
+    }
+    
+    var lastScrollY = window.scrollY;
+    var menuVisible = false;
+
+    function showMenuBar() {
+        if (!menuVisible) {
+            menuBar.classList.add("is-visible");
+            menuVisible = true;
+        }
+    }
+
+    function hideMenuBar() {
+        if (menuVisible) {
+            menuBar.classList.remove("is-visible");
+            menuVisible = false;
+        }
+    }
+
+    function handleScroll() {
+        var currentY = window.scrollY;
+
+        if (document.body.classList.contains("menu-open")) {
+            showMenuBar();
+            lastScrollY = currentY;
+            return;
+        }
+
+        if (currentY <= 10) {
+            hideMenuBar();
+            lastScrollY = currentY;
+            return;
+        }
+
+        if (currentY > lastScrollY + 2) {
+            showMenuBar();
+        } else if (currentY < lastScrollY - 10) {
+            hideMenuBar();
+        }
+
+        lastScrollY = currentY;
+    }
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    // do not call handleScroll immediately to keep it hidden until first movement
 }
 
 
@@ -108,30 +164,30 @@ function openModal(figura) {
     var modal = document.getElementById("modal");
     // tiene el display none asi que lo cambiamos a display flex, para que al darle a ese figure se abra esa ventana modal
     modal.style.display = "flex";
-
+    
     // con esto encuentra el valor del atributo src dentro del primer figure
     var imagenGaleria = figura.firstElementChild;
     var rutaImagen =
-        figura.getAttribute("data-modal-image") ||
-        imagenGaleria.getAttribute("data-modal-image") ||
-        imagenGaleria.getAttribute("src");
+    figura.getAttribute("data-modal-image") ||
+    imagenGaleria.getAttribute("data-modal-image") ||
+    imagenGaleria.getAttribute("src");
     console.log("Valor de la ruta de la imagen: " + rutaImagen);
-
+    
     // innerHTML pone todo el html que esté dentro de los elementos que has seleccionado previamente  
     var pieImagen = figura.lastElementChild.innerHTML;
     console.log("Pie de imagen: " + pieImagen);
-
-
+    
+    
     // OPCIÓN 1 PARA CALCULAR EL ATRIBUTO SRC DE LA IMAGEN DE LA VENTANA MODAL 
     // esto busca el primer img que encuentre dentro de cualquier hijo dentro de esa ventana modal
     var modalImg = modal.querySelector(".modal-media img");
     modalImg.src = rutaImagen;
     modalImg.alt = imagenGaleria.getAttribute("alt") || "";
-
-
+    
+    
     // OPCIÓN 2 PARA CAMBIAR EL ATRIBUTO: MOVERNOS POR LOS HIJOS
     // modal.firstElementChild.firstElementChild.setAttribute("src", rutaImagen)
-
+    
     // cambiamos el valor del figcaption con la primera opción
     modal.querySelector("figcaption").innerHTML = pieImagen;
 }
@@ -140,4 +196,11 @@ function openModal(figura) {
 function closeModal() {
     console.log("Funcion closeModal");
     modal.style.display = "none";
+}
+
+/**
+ * Busca el elemento con id "modal" y lo oculta estableciendo su estilo de display a "none"
+ */
+function cerrarModal() {
+    document.getElementById("modal-imagen").style.display = "none";
 }

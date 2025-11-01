@@ -40,11 +40,18 @@
                 </div>
             </header>
             <!-- todo (menos la imagen y el video del inicio) lo meto en un div wrapper para que nada de la web llegue a tocar el margen de la pantalla -->
-            <div class="wrapper">
                 <!-- MENU -->
-                <div class="menu-icon" onclick="openMenu()">
-                    <i class="fa-solid fa-bars"></i>
-                </div>
+                 <div class="menu">
+                     <div class="menu-logo">
+                        <img src="media/img/LogoMenu.webp" alt="RAVIAfest">
+                     </div>
+                     <div class="menu-actions">
+                        <a class="menu-cta" href="#entradas">ENTRADAS</a>
+                        <button class="menu-icon" type="button" onclick="openMenu()" aria-label="Abrir menú">
+                        <img src="media/img/menu-icon.webp" alt="">
+                        </button>
+                     </div>
+                 </div>
                 <nav id="menu">
                     <ul>
                         <li>
@@ -57,11 +64,10 @@
                             <a href="#" onclick="closeMenu()">INFO</a>
                         </li>
                         <li>
-                            <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+                            <img src="media/img/btn-x.webp" alt="X" onclick="closeMenu()">
                         </li>
                     </ul>
                 </nav>
-            </div>
 
             <!-- MARQUEE LOGOS -->
             <div class="marquee" id="MarqueeLogos">

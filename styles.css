@@ -112,13 +112,60 @@ header video {
 
 
 /* MENU DE HAMBURGUESA DESPLEGABLE */
-.menu-icon {
+.menu {
     position: fixed;
-    top: var(--distancia-iconos);
-    right: var(--distancia-iconos);
-    font-size: var(--tamano-texto-menu);
-    color: var(--color-primario);
+    top: 0;
+    left: 0;
+    right: 0;
     z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--color-primario);
+    padding: 10px clamp(1rem, 4vw, 2rem);
+    transform: translateY(-100%);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+    opacity: 0;
+}
+
+.menu-logo {
+    display: flex;
+    align-items: center;
+}
+
+.menu-logo img {
+    width: clamp(50px, 10vw, 100px);
+    display: block;
+}
+
+.menu-actions {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+}
+
+.menu-cta {
+    padding: 0.55rem 1.2rem;
+    color: var(--color-secundario);
+    font-family: var(--font-hand);
+    font-size: 2.5rem;
+    letter-spacing: -4px;
+}
+
+.menu-icon {
+    font-size: var(--tamano-texto-menu);
+    color: var(--color-secundario);
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu.is-visible {
+    transform: translateY(0);
+    opacity: 1;
 }
 
 
@@ -145,10 +192,12 @@ header video {
     list-style: none;
 }
 
-#menu > ul > li > a,
-#menu > ul > li > i {
+#menu > ul > li > a {
+    display: inline-block;
     color: var(--color-secundario);
-    font-size: var(--tamano-texto-menu);
+    font-family: var(--font-hand);
+    font-size: 5rem;
+    letter-spacing: -4px;
 }
 
 #menu > ul > li:last-child {
@@ -961,5 +1010,35 @@ section.gallery {
 
     .footer-brand img {
         margin: 0 auto 1rem;
+    }
+}
+
+
+/* ANIMACIÓN PARA QUE LOS BOTONES TIEMBLEN */
+.menu-icon:hover,
+.menu-cta:hover,
+.menu-logo img:hover,
+.gallery-item:hover img, 
+#menu > ul > li > a:hover,
+#menu > ul > li > img:hover {
+    animation: button-shake 0.1s ease-in-out infinite;
+}
+
+@keyframes button-shake {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+    20% {
+        transform: translate3d(-2px, 2px, 0);
+    }
+    40% {
+        transform: translate3d(2px, -2px, 0);
+    }
+    60% {
+        transform: translate3d(-2px, -1px, 0);
+    }
+    80% {
+        transform: translate3d(2px, 1px, 0);
     }
 }
