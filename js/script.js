@@ -80,7 +80,7 @@ function openMenu() {
     console.log("Función openMenu");
     // Busca el elemento con id "menu", accede a su primer hijo y luego al último hijo de ese elemento
     // Cambia left a 0 para que se despace hacia la derecha y sea visible
-    document.getElementById("menu").style.left = "0";
+    document.getElementById("menu").style.right = "0";
     document.body.classList.add("menu-open");
     var menuBar = document.querySelector(".menu");
     if (menuBar) {
@@ -96,7 +96,7 @@ function closeMenu() {
     console.log("Función closeMenu");
     // Busca el elemento con id "menu", accede a su primer hijo y luego al último hijo de ese elemento
     // Cambia left a -100% para que se desplace hacia la izquierda y no sea visible
-    document.getElementById("menu").style.left = "-100%";
+    document.getElementById("menu").style.right = "-100%";
     document.body.classList.remove("menu-open");
 }
 
