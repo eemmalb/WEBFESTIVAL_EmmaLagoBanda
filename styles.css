@@ -157,10 +157,10 @@ header video {
     color: var(--color-secundario);
     background: none;
     border: none;
-    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
+    display: none;
 }
 
 .menu.is-visible {
@@ -186,8 +186,9 @@ header video {
     height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    gap: clamp(1.5rem, 4vh, 2.5rem);
     padding: 0;
     list-style: none;
 }
@@ -195,20 +196,26 @@ header video {
 #menu > ul > li > a {
     display: inline-block;
     color: var(--color-secundario);
-    font-family: var(--font-hand);
-    font-size: 5rem;
-    letter-spacing: -4px;
+    font-family: "EmmaRegular";
+    font-size: 3rem;
+    
 }
 
 #menu > ul > li:last-child {
     position: absolute;
     right: var(--distancia-iconos);
     top: var(--distancia-iconos);
+    font-size: var(--tamano-texto-menu);
+    color: var(--color-secundario);
 }
 
-@media (max-width: 450px) {
+@media (max-width: 780px) {
     .menu-actions .menu-cta {
         display: none;
+    }
+
+    .menu-icon {
+        display: block;
     }
 }
 
@@ -1083,7 +1090,7 @@ section.gallery {
 .menu-logo img:hover,
 .gallery-item:hover img, 
 #menu > ul > li > a:hover,
-#menu > ul > li > img:hover {
+#menu > ul > li > i:hover {
     animation: button-shake 0.1s ease-in-out infinite;
 }
 
