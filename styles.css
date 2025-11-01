@@ -13,6 +13,15 @@
 @font-face {
     font-family: "EmmaRegular";
     src: url("./media/fonts/Emma-Regular.woff") format("woff"),
+         url("./media/fonts/Emma-Regular.otf") format("opentype");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "EmmaCaractesp";
+    src: url("./media/fonts/Emma_caractesp-Regular.woff") format("woff"),
          url("./media/fonts/Emma_caractesp-Regular.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
@@ -31,7 +40,7 @@
     --tamano-texto-menu: 2rem;
     --font-primary: Arial, Helvetica, sans-serif;
     --font-secondary: "DrukWideBold", sans-serif;
-    --font-hand: "EmmaRegular", sans-serif;
+    --font-hand: "EmmaCaractesp", sans-serif;
 
 }
 
@@ -286,7 +295,7 @@ header video {
     display: grid;
     place-items: center;
     /* padding: 8vh 2vw; */
-    min-height: 50vh;
+    min-height: 40vh;
     position: relative;
     overflow: visible;
 }
@@ -615,6 +624,89 @@ section.gallery {
         display: none;
     }
 }
+
+
+
+/* VENTANA MODAL GALERÍA */
+
+#modal {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+   
+    /* aunque tenga display none, le pongo los atributos, ya que en js cambiará a display flex on clic */
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal figcaption img {
+    display: none;
+}
+
+#modal figcaption p {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+}
+
+#modal figcaption ul {
+    margin: 0 0 1rem;
+    padding-left: 1.2rem;
+    font-size: 1.1rem;
+}
+
+#modal figcaption p:last-child {
+    margin-bottom: 0;
+}
+
+
+
+#modal > figure {
+    width: min(900px, 92vw);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+}
+
+#modal > figure > * {
+    width: 100%;
+}
+
+#modal .modal-media {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal .modal-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#modal figcaption {
+    max-width: 640px;
+    width: 100%;
+    margin: 0 auto;
+    text-align: left;
+}
+
+#modal > i {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 3rem;
+    cursor: pointer;
+    color: var(--color-primario);
+}
+
 
 /* MARQUEE */
 .marquee {

@@ -130,7 +130,6 @@
                 <!-- SECCIÓN CUENTA ATRÁS -->
                 <section class="countdown">
                     <div class="countdown-group">
-                        <!-- <h3 class="sect-title">EL FESTIVAL COMIENZA EN:</h3> -->
                         <div class="fest-countdown">
                             <div class="fest-box">
                                 <span class="fest-num" id="countdown-days">106</span>
@@ -171,26 +170,68 @@
                 </div>
 
                 <div class="gallery-grid">
-                    <figure class="gallery-item">
+                    <figure class="gallery-item" data-modal-image="media/img/TituloDondeModal.webp" onclick="openModal(this)">
                         <img src="media/img/DondeGaleriaColor.webp" alt="Ferial Plaza Guadalajara">
+                        <figcaption>
+                        <img src="media/img/GarabatoModal.webp" alt="">
+                        <p>RAVIA Fest tendrá lugar en la <strong>explanada exterior de Ferial Plaza, Guadalajara (España)</strong>. Un espacio abierto, amplio y preparado para acoger grandes eventos, a <strong>menos de una hora de Madrid</strong> y con acceso sencillo en coche, autobús y tren.</p>
+                        <p>Zona vallada, entradas controladas, áreas de descanso, puntos de información y rutas señalizadas. Todo pensado para que la experiencia sea fluida desde que llegas hasta que te vas.</p>
+                        </figcaption>
                     </figure>
-                    <figure class="gallery-item">
+                    <figure class="gallery-item" data-modal-image="media/img/TituloQuienModal.webp" onclick="openModal(this)">
                         <img src="media/img/DJsetKaytranadaColor.webp" alt="Kaytranada tocando en directo">
+                        <figcaption>
+                        <p><strong>Kaytranada</strong> será el DJ invitado con un set exclusivo para RAVIA. Ritmos que mezclan rap, electrónica, groove y sonidos urbanos, perfecto para cerrar la noche con la vibra arriba.</p>
+                        <p>Un show único pensado para este festival.</p>
+                        </figcaption>
                     </figure>
-                    <figure class="gallery-item">
+                    <figure class="gallery-item" data-modal-image="media/img/TituloComidaModal.webp" onclick="openModal(this)">
                         <img src="media/img/ComidaGaleria.webp" alt="Puestos de comida disponibles">
+                        <figcaption>
+                        <p>RAVIA contará con una zona de <strong>food trucks y puestos con variedad</strong> para todos los gustos: hamburguesas, tacos, smash burgers, ramen, bowls y opciones veggie y veganas.</p>
+                        <p>Puntos de agua, mesas altas, zonas chill y pago con tarjeta/QR en todos los puestos.</p>
+                        </figcaption>
                     </figure>
-                    <figure class="gallery-item">
+                    <figure class="gallery-item" data-modal-image="media/img/TituloCuandoModal.webp" onclick="openModal(this)">
                         <img src="media/img/FechaGaleria.webp" alt="20 al 22 de Febrero">
+                        <figcaption>
+                        <p>RAVIA Fest se celebra <strong>del 20 al 22 de febrero de 2026, de viernes a domingo</strong>. Tres días completos dedicados al rap y la cultura urbana, con conciertos, DJ sets, experiencias y actividades.</p>
+                        <p>Apúntalo en tu agenda y empieza la cuenta atrás.</p>
+                        </figcaption>
                     </figure>
-                    <figure class="gallery-item">
+                    <figure class="gallery-item" data-modal-image="media/img/TituloInstalacionesModal.webp" onclick="openModal(this)">
                         <img src="media/img/escenarioGaleria.webp" alt="Escenarios">
+                        <figcaption>
+                        <p>El festival contará con <strong>dos escenarios principales y una carpa extra</strong> dedicada a DJ sets y shows más cercanos al público.</p>
+                        <ul>
+                            <li>Pantallas LED gigantes</li>
+                            <li>Sistemas de sonido de alta presión y cobertura uniforme</li>
+                            <li>Iluminación dinámica y efectos sorpresa</li>
+                            <li>Visuales en directo y realización multicámara</li>
+                        </ul>
+                        <p>Cada detalle está pensado para que el espectáculo suene y se vea como tiene que sonar.</p>
+                        </figcaption>
                     </figure>
-                    <figure class="gallery-item">
+                    <figure class="gallery-item" data-modal-image="media/img/TituloMerchModal.webp" onclick="openModal(this)">
                         <img src="media/img/MerchGaleria.webp" alt="Merch de RAVIA disponible">
+                        <figcaption>
+                        <p>Sudaderas, camisetas, posters, tote bags y piezas especiales <strong>solo disponibles en RAVIA Fest</strong>. Diseños limitados, estética del festival y colaboraciones sorpresa.</p>
+                        <p>Lo podrás conseguir en el stand oficial dentro del recinto.</p>
+                        </figcaption>
                     </figure>
                 </div>
             </section>
+                
+            <!-- Ventana modal -->
+            <div id="modal" onclick="closeModal()">
+                <figure>
+                    <div class="modal-media">
+                        <img src="" alt="">
+                    </div>
+                    <figcaption></figcaption>
+                </figure>
+                <i class="fa-solid fa-xmark" onclick="closeModal()"></i>
+            </div>
 
                 <!-- MARQUEE ARTISTAS -->
                 <div class="marquee">
