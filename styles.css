@@ -318,7 +318,7 @@ header video {
     margin: clamp(0.6rem, 1.8vw, 1.5rem) auto 0;
     display: grid;
     gap: clamp(0.55rem, 1.4vw, 1rem);
-    text-align: left;
+    text-align: center;
 }
 
 .intro-lead {
@@ -555,6 +555,31 @@ section.gallery {
     filter: none;
 }
 
+.gallery-item figcaption {
+    display: grid;
+    gap: clamp(0.45rem, 1.4vw, 1rem);
+    padding-top: clamp(1rem, 2vw, 1.6rem);
+    text-align: center;
+    justify-items: center;
+}
+
+.gallery-item figcaption p {
+    margin: 0;
+    font-size: clamp(0.78rem, 1.5vw, 1rem);
+    line-height: 1.45;
+    width: 100%;
+}
+
+.gallery-item figcaption p strong {
+    font-family: var(--font-secondary);
+    letter-spacing: -0.01em;
+}
+
+.gallery-item figcaption p span {
+    color: var(--color-primario);
+    font-family: var(--font-secondary);
+}
+
 .w-scribble {
     position: absolute;
     top: 0;
@@ -720,27 +745,13 @@ section.gallery {
     display: none;
 }
 
-#modal figcaption p {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-}
-
-#modal figcaption ul {
-    margin: 0 0 1rem;
-    padding-left: 1.2rem;
-    font-size: 1.1rem;
-}
-
-#modal figcaption p:last-child {
-    margin-bottom: 0;
-}
-
 #modal > figure {
     width: min(900px, 92vw);
     display: flex;
     flex-direction: column;
     gap: clamp(2rem, 4vw, 4rem);
     align-items: center;
+    position: relative;
 }
 
 #modal > figure > * {
@@ -762,10 +773,40 @@ section.gallery {
 }
 
 #modal figcaption {
-    max-width: 640px;
+    max-width: min(720px, 92vw);
     width: 100%;
     margin: 0 auto;
-    text-align: left;
+    display: grid;
+    gap: clamp(0.6rem, 1.6vw, 1.2rem);
+}
+
+#modal figcaption p {
+    margin: 0;
+    font-size: clamp(0.88rem, 1.9vw, 1.2rem);
+    line-height: 1.55;
+    text-align: center;
+}
+
+#modal figcaption ul {
+    margin: 0;
+    padding-left: 1.4rem;
+    font-size: clamp(0.88rem, 1.9vw, 1.2rem);
+    line-height: 1.45;
+}
+
+#modal figcaption p:last-child,
+#modal figcaption ul:last-child {
+    margin-bottom: 0;
+}
+
+#modal figcaption strong {
+    font-family: var(--font-secondary);
+    letter-spacing: -0.012em;
+}
+
+#modal figcaption span {
+    color: var(--color-primario);
+    font-family: var(--font-secondary);
 }
 
 #modal > i {
@@ -773,7 +814,6 @@ section.gallery {
     top: 1rem;
     right: 1rem;
     font-size: 3rem;
-    cursor: pointer;
     color: var(--color-primario);
 }
 
