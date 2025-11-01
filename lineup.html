@@ -8,9 +8,9 @@
             <link href="styles.css" rel="stylesheet" type="text/css">
 
 
-            <link href="media/img/favicon.png" rel="icon" type="image/png">
+            <link href="media/img/faviconRAVIA.png" rel="icon" type="image/png">
             <!--ICONOS DE FONT AWESOME-->
-            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer">
 
             
             <!-- importacion de la libreria, hay que importar la libreria antes que nuestro archivo js  -->
@@ -25,125 +25,206 @@
     
             <meta name="viewport" content="width=device-width, initial-scale=1">
         </head>
-<body>
-    
-    <header>
-        <p>LINE-UP Y HORARIOS</p>
-        <nav id="menu">
-            <div>
-                <i class="fas fa-bars" onclick="openMenu()"></i>
-                <ul>
-                    <li>
-                        <a href="#quienessomos" onclick="closeMenu()">LINE-UP</a>
-                    </li>
-                    <li>
-                        <a href="#disenios" onclick="closeMenu()">ENTRADAS</a>
-                    </li>
-                    <li>
-                        <a href="#contacto" onclick="closeMenu()">INFO</a>
-                    </li>
-                    <li>
-                        <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
-                    </li>
-                </ul>
-            </div>
-            <div>
-                <i class="fas fa-search"></i>
-                <i class="far fa-star"></i>
-                <i class="fas fa-shopping-cart"></i>
-            </div>
-            <h1>
-                <a href="#"><span class="logo"></span></a>
-            </h1>
-        </nav>
-    </header>
 
-    <!-- MARQUEE ARTISTAS -->
-    <div class="marquee marquee-artists">
-        <div class="group rtl">
-            <figure class="marquee-item">
-                <img src="media/img/MarqueeTravissott.webp" alt="TRAVIS SCOTT">
-            </figure>
-            <figure class="marquee-item">
-                <img src="media/img/MarqueeLilwayne.webp" alt="LIL WAYNE">
-            </figure>                        
-            <figure class="marquee-item">
-                <img src="media/img/MarqueePlayboicarti.webp" alt="PLAYBOI CARTI">
-            </figure>                        
-            <figure class="marquee-item">
-                <img src="media/img/MarqueeLiluzivert.webp" alt="LIL UZI VERT">
-            </figure>                        
-            <figure class="marquee-item">
-                <img src="media/img/MarqueeKaytranada.webp" alt="KAYTRANADA">
-            </figure>                        
-            <figure class="marquee-item">
-                <img src="media/img/MarqueeYoungthug.webp" alt="YOUNG THUG">
-            </figure>      
-            <figure class="marquee-item">
-                <img src="media/img/Marquee21savage.webp" alt="21 SAVAGE">
-            </figure>                    
-            <figure class="marquee-item">
-                <img src="media/img/MarqueeFuture.webp" alt="FUTURE">
-            </figure>  
-            <figure class="marquee-item">
-                <img src="media/img/MarqueeWizkhalifa.webp" alt="WIZ KHALIFA">
-            </figure>  
-            <figure class="marquee-item">
-                <img src="media/img/MarqueeTravissott.webp" alt="TRAVIS SCOTT">
-            </figure>
-            <figure class="marquee-item">
-                <img src="media/img/MarqueeLilwayne.webp" alt="LIL WAYNE">
-            </figure>                        
-            <figure class="marquee-item">
-                <img src="media/img/MarqueePlayboicarti.webp" alt="PLAYBOI CARTI">
-            </figure>                        
-            <figure class="marquee-item">
-                <img src="media/img/MarqueeLiluzivert.webp" alt="LIL UZI VERT">
-            </figure>                        
-            <figure class="marquee-item">
-                <img src="media/img/MarqueeKaytranada.webp" alt="KAYTRANADA">
-            </figure>                        
-            <figure class="marquee-item">
-                <img src="media/img/MarqueeYoungthug.webp" alt="YOUNG THUG">
-            </figure>      
-            <figure class="marquee-item">
-                <img src="media/img/Marquee21savage.webp" alt="21 SAVAGE">
-            </figure>                    
-            <figure class="marquee-item">
-                <img src="media/img/MarqueeFuture.webp" alt="FUTURE">
-            </figure>  
-            <figure class="marquee-item">
-                <img src="media/img/MarqueeWizkhalifa.webp" alt="WIZ KHALIFA">
-            </figure>
-        </div>
-    </div>
+        <body>
 
-<div class="wrapper">
-    <!-- SECCIÓN ACTUACIONES -->
-    <section class="performances">
-        <div class="perf-board">
-            <h2 class="perf-title">ACTUACIONES MUSICALES</h2>
-            <div class="perf-cols">
-                <ul class="perf-col left">
-                    <li>TRAVIS SCOTT</li>
-                    <li>LIL WAYNE</li>
-                    <li>PLAYBOI CARTI</li>
-                    <li>LIL UZI VERT</li>
-                    <span><li>KAYTRANADA (DJ SET)</li></span>
+            <!-- MENU -->
+            <div class="menu">
+                     <div class="menu-logo">
+                        <a href="index.html"><img src="media/img/LogoMenu.webp" alt="RAVIAfest"></a>
+                     </div>
+                     <div class="menu-actions">
+                         <a class="menu-cta" href="lineup.html">LINE-UP</a>
+                        <a class="menu-cta" href="#entradas">ENTRADAS</a>
+                        <a class="menu-cta" href="#entradas">INFO</a>
+                        <button class="menu-icon" type="button" onclick="openMenu()" aria-label="Abrir menú">
+                        <i class="fa-solid fa-bars"></i>
+                        </button>
+                     </div>
+                 </div>
+                <nav id="menu">
+                    <ul>
+                        <li>
+                            <a href="lineup.html" onclick="closeMenu()">LINE-UP</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="closeMenu()">ENTRADAS</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="closeMenu()">INFO</a>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-xmark" onclick="closeMenu()"></i>
+                        </li>
+                    </ul>
+                </nav>
+                
 
-                </ul>
-                <ul class="perf-col right">
-                    <li>YOUNG THUG</li>
-                    <li>21 SAVAGE</li>
-                    <li>FUTURE</li>
-                    <li>WIZ KHALIFA</li>
-                </ul>
-            </div>
-            <h2 class="perf-title">Y MUCHOS MÁS</h2>
-        </div>
-    </section>
+                <div class="wrapper">
+                    <section class="intro">
+                        <h2 class="intro-title">LINE-UP Y HORARIOS</h2>
+                        <div class="lineup-gallery">
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-21savage.webp" alt="21 Savage">
+                                <figcaption>21 Savage</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-asapRocky.webp" alt="A$AP Rocky">
+                                <figcaption>A$AP Rocky</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-burnaBoy.webp" alt="Burna Boy">
+                                <figcaption>Burna Boy</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-denzelCurry.webp" alt="Denzel Curry">
+                                <figcaption>Denzel Curry</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-donToliver.webp" alt="Don Toliver">
+                                <figcaption>Don Toliver</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-future.webp" alt="Future">
+                                <figcaption>Future</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-gunna.webp" alt="Gunna">
+                                <figcaption>Gunna</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-lilWayne.webp" alt="Lil Wayne">
+                                <figcaption>Lil Wayne</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-loeShimmy.webp" alt="Loe Shimmy">
+                                <figcaption>Loe Shimmy</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-offset.webp" alt="Offset">
+                                <figcaption>Offset</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-playboiCarti.webp" alt="Playboi Carti">
+                                <figcaption>Playboi Carti</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-pushaT.webp" alt="Pusha T">
+                                <figcaption>Pusha T</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-quavo.webp" alt="Quavo">
+                                <figcaption>Quavo</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-rema.webp" alt="Rema">
+                                <figcaption>Rema</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-travisScott.webp" alt="Travis Scott">
+                                <figcaption>Travis Scott</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-wizKhalifa.webp" alt="Wiz Khalifa">
+                                <figcaption>Wiz Khalifa</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-youngNudy.webp" alt="Young Nudy">
+                                <figcaption>Young Nudy</figcaption>
+                            </figure>
+                            <figure class="lineup-card">
+                                <img src="media/img/Lineup-youngThug.webp" alt="Young Thug">
+                                <figcaption>Young Thug</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+                </div>
+                    
+                <!-- MARQUEE ARTISTAS -->
+                <div class="marquee marquee-artists">
+                    <div class="group rtl">
+                        <figure class="marquee-item">
+                            <img alt="TRAVIS SCOTT" src="media/img/MarqueeTravissott.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="LIL WAYNE" src="media/img/MarqueeLilwayne.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="PLAYBOI CARTI" src="media/img/MarqueePlayboicarti.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="LIL UZI VERT" src="media/img/MarqueeLiluzivert.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="KAYTRANADA" src="media/img/MarqueeKaytranada.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="YOUNG THUG" src="media/img/MarqueeYoungthug.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="21 SAVAGE" src="media/img/Marquee21savage.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="FUTURE" src="media/img/MarqueeFuture.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="WIZ KHALIFA" src="media/img/MarqueeWizkhalifa.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="TRAVIS SCOTT" src="media/img/MarqueeTravissott.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="LIL WAYNE" src="media/img/MarqueeLilwayne.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="PLAYBOI CARTI" src="media/img/MarqueePlayboicarti.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="LIL UZI VERT" src="media/img/MarqueeLiluzivert.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="KAYTRANADA" src="media/img/MarqueeKaytranada.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="YOUNG THUG" src="media/img/MarqueeYoungthug.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="21 SAVAGE" src="media/img/Marquee21savage.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="FUTURE" src="media/img/MarqueeFuture.webp"/>
+                        </figure>
+                        <figure class="marquee-item">
+                            <img alt="WIZ KHALIFA" src="media/img/MarqueeWizkhalifa.webp"/>
+                        </figure>
+                    </div>
+                </div>
 
-</div>
 
-
-</body>
+                <div class="wrapper">
+                <!-- SECCIÓN ACTUACIONES -->
+                    <section class="performances">
+                        <div class="perf-board">
+                            <h2 class="perf-title">ACTUACIONES MUSICALES</h2>
+                            <div class="perf-cols">
+                                <ul class="perf-col left">
+                                    <li>TRAVIS SCOTT</li>
+                                    <li>LIL WAYNE</li>
+                                    <li>PLAYBOI CARTI</li>
+                                    <li>LIL UZI VERT</li>
+                                    <span><li>KAYTRANADA (DJ SET)</li></span>
+                                </ul>
+                                <ul class="perf-col right">
+                                    <li>YOUNG THUG</li>
+                                    <li>21 SAVAGE</li>
+                                    <li>FUTURE</li>
+                                    <li>WIZ KHALIFA</li>
+                                </ul>
+                            </div>
+                            <h2 class="perf-title">Y MUCHOS MÁS</h2>
+                        </div>
+                    </section>
+                </div>
+                     
+        </body>
+    </html>

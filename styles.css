@@ -219,8 +219,8 @@ header video {
     }
 }
 
-
-
+/**
+/* PÁGINA INICIAL */
 
 /* MARQUEE LOGOS*/
 #MarqueeLogos {
@@ -343,6 +343,7 @@ header video {
     font-family: var(--font-secondary);
     letter-spacing: -0.015em;
 }
+
 
 @media (max-width: 985px) {
     .intro .scribble-intro {
@@ -1112,3 +1113,10 @@ section.gallery {
         transform: translate3d(2px, 1px, 0);
     }
 }
+
+
+
+
+
+/**
+/* PÁGINA LINE-UP */

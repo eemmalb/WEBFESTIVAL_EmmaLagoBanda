@@ -68,6 +68,7 @@ function initCountdown() {
 document.addEventListener("DOMContentLoaded", function () {
     initCountdown();
     initMenuScrollBehavior();
+    initLineupSlider();
 });
 
 
@@ -156,6 +157,7 @@ function initMenuScrollBehavior() {
 }
 
 
+
 // abre la ventana modal
 // pongo un parametro (figura) que sera el figure sobre el que yo le he hecho clic, y más tarde trabajare con ese parametro figura
 function openModal(figura) {
@@ -203,4 +205,63 @@ function closeModal() {
  */
 function cerrarModal() {
     document.getElementById("modal-imagen").style.display = "none";
+}
+
+
+
+// Galeria line-up
+function initLineupSlider() {
+    var slider = document.querySelector(".lineup-slider");
+    if (!slider) {
+        return;
+    }
+
+    var track = slider.querySelector(".lineup-track");
+    if (!track) {
+        return;
+    }
+
+    var buttons = slider.querySelectorAll("[data-lineup-dir]");
+
+    function scrollAmount() {
+        return track.clientWidth * 0.8;
+    }
+
+    function scrollByDirection(dir) {
+        track.scrollBy({ left: dir * scrollAmount(), behavior: "smooth" });
+    }
+
+    buttons.forEach(function (button) {
+        var dir = Number(button.dataset.lineupDir || 0);
+        if (!dir) {
+            return;
+        }
+
+        button.addEventListener("click", function () {
+            scrollByDirection(dir);
+        });
+    });
+
+    function updateButtons() {
+        var maxScroll = track.scrollWidth - track.clientWidth;
+        var atStart = track.scrollLeft <= 8;
+        var atEnd = track.scrollLeft >= maxScroll - 8;
+
+        buttons.forEach(function (button) {
+            var dir = Number(button.dataset.lineupDir || 0);
+            if (!dir) {
+                return;
+            }
+
+            var disable = dir < 0 ? atStart : atEnd;
+            button.disabled = disable;
+            button.setAttribute("aria-disabled", disable);
+        });
+    }
+
+    track.addEventListener("scroll", function () {
+        window.requestAnimationFrame(updateButtons);
+    });
+
+    updateButtons();
 }
