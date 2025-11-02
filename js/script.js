@@ -271,3 +271,105 @@ function initLineupSlider() {
 
     updateButtons();
 }
+
+
+
+
+// Cálculo del coste total
+function costeTotal() {
+    // número de entradas
+    var numero = document.getElementById("numero").value;
+    
+    // actividad seleccionada
+    var actividad = document.getElementById("actividad").value;
+    // con .value sacamos lo que ha puesto el usuario
+
+    console.log("numero de entradas:" + numero);
+    console.log("entrada seleccionada" + actividad);
+
+
+    // calculo del precio
+    var precio = 0;
+    //  para cada valor del actividad se ejecuta un caso u otro. tambien se podria hacer con if y else
+    // cuando llega un break se sale del switch
+    switch(actividad) {
+        case "a1":
+            precio = 720;
+            break;
+        case "a2":
+            precio = 900;
+            break;
+        case "a3":
+            precio = 1200;
+            break;
+        }
+    console.log("Precio por entrada: " + precio);
+
+    var precioTotal = numero * precio;
+    console.log("Precio Total: " +  precioTotal)
+    document.getElementById("coste").innerHTML = precioTotal + "&euro;"
+    // hay elementos que no se pueden poner como texto ya que se usan de normal en el html y se puede rayar, asiq se usan entidades, como &euro para el simbolo del euro
+
+}
+
+
+// presenta la ventana modal de envio del formulario 
+function comprar() {
+    // informacion que ha rellenado el usuario
+    var nombre = document.getElementById("nombre").value;
+    var correo = document.getElementById("correo").value;
+    var actividad = document.getElementById("actividad").value;
+    var entradas = document.getElementById("numero").value;
+
+    // aqui no se pone value ya que no es un valor que haya puesto el usuario sino el valor que se queda denttro del span en el html
+    var coste = document.getElementById("coste").innerHTML;
+
+
+    // para que en vez de a1 a2 o a3 ponga el nombre de la actividad
+    var nombreActividad = "";
+    switch(actividad) {
+        case "a1":
+            nombreActividad = "Entrada PASS";
+            break;
+        case "a2":
+            nombreActividad = "Entrada VIP";
+            break;
+        case "a3":
+            nombreActividad = "Entrada MAX";
+            break;
+
+    }
+
+    console.log("Nombre: " + nombre);
+    console.log("Correo: " + correo);
+    console.log("Tipo de entrada: " + nombreActividad);
+    console.log("Número de entradas: " + entradas);
+    console.log("Coste: " + coste);
+
+
+
+    // presentamos la informacion en la ventana modal
+    document.getElementById("n").innerHTML = nombre;
+    document.getElementById("c").innerHTML = correo;
+    document.getElementById("a").innerHTML = nombreActividad;
+    document.getElementById("nu").innerHTML = entradas;
+    document.getElementById("ct").innerHTML = coste;
+
+    // mostramos la ventana modal
+    document.getElementById("modal-entradas").style.display = "flex";
+
+    return false;
+    // para que no se recarge la pagina cuando se envia el formulario
+}
+
+// cerramos la ventana modal
+function cerrarVentana() {
+    document.getElementById("modal-entradas").style.display = "none";
+}
+
+// inicializar la libreria cuando ha cargado la página
+// cuando la pagina cargue detectamos ese evento onload
+window.onload = function () {
+    AOS.init();
+        duration: 1500
+}

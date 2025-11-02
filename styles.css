@@ -117,7 +117,7 @@ header video {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 10;
+    z-index: 12;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -387,7 +387,7 @@ header video {
     color: var(--color-primario);
     position: relative;
     z-index: 2;
-    font-size: clamp(12px, 1.2vw + 8px, 18px); /* clamp(min,normal,max) */
+    font-size: clamp(12px, 1.2vw + 8px, 18px);
 }
 
 /* ilustración entre DÍAS y HORAS */
@@ -983,6 +983,7 @@ section.gallery {
     padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3rem) clamp(1rem, 2.5vw, 1.6rem);
     margin: clamp(3rem, 8vw, 5rem) 0 0;
     position: relative;
+    z-index: 9;
 }
 
 .site-footer a {
@@ -1079,7 +1080,9 @@ section.gallery {
 .gallery-item:hover img, 
 #menu > ul > li > a:hover,
 #menu > ul > li > i:hover,
-.btn-consigue:hover {
+.btn-consigue:hover,
+#masinfo > form > input[type=submit]:hover,
+#modal-entradas > div > button:hover {
     animation: button-shake 0.1s ease-in-out infinite;
 }
 
@@ -1418,4 +1421,188 @@ section.gallery {
 .lines-entradas-left {
     display: none;
 }
+}
+
+
+
+/* FORMULARIO DE COMPRA */
+#masinfo {
+    margin-top: 80px;
+    z-index: 11;
+    display: grid;
+    text-align: center;
+    justify-items: center;
+}
+
+#masinfo > p:first-child{
+    color: var(--color-primario);
+    font-family: var(--font-hand);
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+section > form > label {
+    display: none;
+}
+
+#masinfo > form {
+    width: 100%;
+    max-width: 800px;
+    margin-top: 35px;
+}
+
+#masinfo > form > p {
+    margin: 25px 0;
+}
+
+#masinfo > form > input,
+#masinfo > form > select {
+    width: 100%;
+    margin: 0.5em 0;
+    padding: 0.5em;
+}
+
+#masinfo > form > input[type=submit],
+#modal-entradas > div > button {
+    width: auto;
+    margin: 0 auto;
+    padding: 1em;
+    color: var(--color-primario);
+    border: var(--color-primario) 1px solid;
+    font-family: var(--font-secondary);
+}
+
+#coste {
+    font-weight: bold;
+    font-family: var(--font-secondary);
+    color: var(--color-primario);
+}
+
+#modal-imagen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#modal-imagen > figure {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#modal-imagen > figure > * {
+    width: 40%;
+    max-width: 600px;
+    object-fit: cover;
+}
+
+#modal-imagen > figure > img {
+    position: relative;
+    filter: grayscale(100%);    
+    box-shadow: grey 1rem 1rem 1rem;
+}
+
+#modal-imagen > i,
+#modal-entradas > i {
+    position: absolute;
+    top: var(--distancia-iconos);
+    right: var(--distancia-iconos);
+    font-size: 3rem;
+}
+
+#modal-entradas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url("media/img/TexturaPapel.webp") center/cover;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+    padding-top: 300px;
+}
+
+#modal-entradas > div {
+    padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+#modal-entradas > h2 {
+    font-size: 6em;
+    font-family: var(--font-hand);
+    position: absolute;
+    color: var(--color-primario);
+}
+
+#modal-entradas > h2:first-child {
+    top: 20%;
+}
+
+#modal-entradas > h2:nth-child(2) {
+    top: 30%;
+}
+
+#modal-entradas > div > p,
+#modal-entradas > div > ul > li {
+    font-size: 1.2em;
+}
+
+#modal-entradas > div > ul > li {
+    font-size: 2rem;
+}
+
+#modal-entradas > div > h2,
+#modal-entradas > div > p,
+#modal-entradas > div > ul {
+    margin: 1rem 0;
+}
+
+
+@media screen and (max-width: 850px) {
+    h1 {
+        font-size: 4rem;
+    }
+
+    h2 {
+        font-size: 5vw;
+    }
+
+    #historia  > div {
+        flex-direction: column;
+    }
+
+    #historia  > div > * {
+        width: 100%;
+        gap: 1rem;
+    }
+
+    .galeria {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .galeria > figure {
+        width: 100%;
+    }
+
+    #modal-imagen > figure {
+        flex-direction: column;
+    }
+
+    #modal-imagen > figure > * {
+        width: 100%;
+    }
 }

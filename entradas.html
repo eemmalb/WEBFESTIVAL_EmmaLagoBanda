@@ -138,9 +138,62 @@
                            </div>  
                         </div>  
                     </div>
-
                 </div>
             </section>
+
+            <div><img src="media/img/lineup-separador.webp" alt=""></div>
+
+
+            
+            <!-- FORMULARIO DE COMPRA -->
+            <section id="masinfo">
+                <p>Introduce tus datos para completar la compra</p>
+                <p>Esto es simple: tú pones tu info, nosotros guardamos tu entrada.</p>
+                <p>Sin historias. Sin spam. Solo RAVIA.<p>
+                <form onsubmit="return comprar()">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" placeholder="Nombre" required>
+                    <label for="correo">Correo electrónico:</label>
+                    <input type="email" id="correo" placeholder="Correo electrónico" required>
+                    <label for="actividad">Tipo de entrada:</label>
+                    <select id="actividad" onchange="costeTotal()" required>
+    
+                        <!-- se pone required en los campos que son obligatorios para rellenar en el formulario  -->
+                        <!-- No se puede poner en el valor el nombre completo de la actividad porque tienen espacios y caracteres extraños -->
+                        <option value="a1">Entrada PASS</option>
+                        <option value="a2">Entrada VIP</option>
+                        <option value="a3">Entrada MAX</option>
+                    </select>
+                    <label for="numero">Número de entradas:</label>
+                    <input type="number" id="numero" min="1" max="6" placeholder="Número de entradas" onchange="costeTotal()" required>
+                    <p>Coste de las entradas: <span id="coste"></span></p>
+                    <input type="submit" value="Comprar entradas">
+                </form>
+            </section>
+            <div id="modal-imagen">
+                <figure>
+                    <img src="" alt="">
+                    <figcaption></figcaption>
+                </figure>
+                <i class="fa-solid fa-xmark" onclick="cerrarModal()"></i>
+            </div>
+            <div id="modal-entradas">
+                <h2>La compra se ha</h2> 
+                <h2>realizado correctamente</h2>
+                <div>
+                    <p>DATOS DEL PEDIDO:</p>
+                    <ul>
+                        <!-- Se tienen que poner id distintos a los del formulario porque no se pueden repetir los id dentro del mismo HTML -->
+                        <li>Nombre: <strong id="n"></strong></li>
+                        <li>Correo electrónico: <strong id="c"></strong></li>
+                        <li>Actividad: <strong id="a"></strong></li>
+                        <li>Tipo de entradas: <strong id="nu"></strong></li>
+                        <li>Coste total: <strong id="ct"></strong></li>
+                    </ul>
+                    <button onclick="cerrarVentana()">Aceptar</button>
+                </div>
+            </div>
+                
             
 
             
