@@ -110,6 +110,12 @@ function initMenuScrollBehavior() {
     if (!menuBar) {
         return;
     }
+
+    // para que en la página de lineup siempre se mantenga visible
+    if (document.body.classList.contains("menu-fixed")) {
+        menuBar.classList.add("is-visible");
+        return;
+    }
     
     var lastScrollY = window.scrollY;
     var menuVisible = false;

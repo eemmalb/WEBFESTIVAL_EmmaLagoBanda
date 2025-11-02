@@ -128,6 +128,11 @@ header video {
     opacity: 0;
 }
 
+.menu-fixed .menu {
+    transform: translateY(0);
+    opacity: 1;
+}
+
 .menu-logo {
     display: flex;
     align-items: center;
@@ -1167,10 +1172,47 @@ section.gallery {
     justify-content: center;
     align-items: center;
     opacity: 0;
+    pointer-events: none;
     transition: 0.6s;
     object-fit: contain;
 }
 
-.lineup-gallery figure figcaption:hover {
+.lineup-gallery figure figcaption img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.lineup-gallery figure:hover figcaption {
     opacity: 1;
 }
+
+@media (max-width: 1000px) {
+    .lineup-gallery figure > img {
+        display: none;
+    }
+
+    .lineup-gallery figure figcaption {
+        position: relative;
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .lineup-gallery figure figcaption img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 700px) {
+    .scribble-lineup {
+        display: none;
+    }
+}
+
