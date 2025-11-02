@@ -846,6 +846,10 @@ section.gallery {
     overflow: clip;
 }
 
+.marquee:last-of-type {
+    margin-bottom: 0;
+}
+
 .group {
     display: flex;
     padding-left: 4.8rem;
@@ -999,8 +1003,9 @@ section.gallery {
 .site-footer {
     background: url("media/img/TexturaPapel.webp") center/cover;
     color: var(--color-terciario);
-    padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
-    margin-top: clamp(4rem, 10vw, 6rem);
+    padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3rem) clamp(1rem, 2.5vw, 1.6rem);
+    margin: clamp(3rem, 8vw, 5rem) 0 0;
+    position: relative;
 }
 
 .site-footer a {
@@ -1018,7 +1023,7 @@ section.gallery {
     gap: clamp(2rem, 6vw, 4rem);
     flex-wrap: wrap;
     max-width: 1000px;
-    margin: 0 auto clamp(2rem, 5vw, 3rem);
+    margin: 0 auto clamp(0.5rem, 2vw, 1.4rem);
 }
 
 .footer-brand {
@@ -1096,7 +1101,8 @@ section.gallery {
 .menu-logo img:hover,
 .gallery-item:hover img, 
 #menu > ul > li > a:hover,
-#menu > ul > li > i:hover {
+#menu > ul > li > i:hover,
+.btn-consigue:hover {
     animation: button-shake 0.1s ease-in-out infinite;
 }
 
@@ -1216,3 +1222,106 @@ section.gallery {
     }
 }
 
+
+/* HORARIOS DÍAS */
+.schedule {
+    padding: clamp(3rem, 6vw, 4.5rem) 0;
+}
+
+.schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.schedule-artists {
+    max-height: clamp(320px, 55vh, 540px);
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.9rem, 1.9vw, 1.5rem);
+    padding-right: clamp(0.5rem, 1vw, 1rem);
+    scrollbar-width: thin;
+    overflow-y: auto;
+}
+
+.schedule-artists::-webkit-scrollbar {
+    width: 6px;
+}
+
+.schedule-artists::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+}
+
+.schedule-artist {
+    font-family: var(--font-secondary);
+    text-transform: uppercase;
+    font-size: clamp(0.5rem, 1.6vw, 1.4rem);
+    letter-spacing: 0.08em;
+}
+
+.schedule-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: clamp(1.5rem, 3vw, 2.5rem);
+    width: 100%;
+}
+
+.schedule-title {
+    font-family: var(--font-hand);
+    font-size: clamp(2.6rem, 6vw, 4rem);
+    color: var(--color-primario);
+    margin-bottom: clamp(0.8rem, 1.6vw, 1.4rem);
+    line-height: 1;
+}
+
+.schedule-time {
+    font-family: var(--font-primary);
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
+    line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+    .schedule-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: clamp(1.5rem, 4vw, 3rem);
+    }
+
+    .schedule-grid > * {
+        width: min(100%, 520px);
+        margin-inline: auto;
+    }
+
+    .schedule-artists {
+        max-height: clamp(240px, 50vh, 440px);
+        padding-right: 0;
+        overflow-y: auto;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+
+    .schedule-details {
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        width: 100%;
+        min-height: auto;
+    }
+}
+
+.btn-consigue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px ;
+}
+
+.btn-consigue a {
+    color: var(--color-primario);
+    font-family: var(--font-secondary);
+    font-size: 1.4rem;
+}
