@@ -1695,7 +1695,7 @@ section > form > label {
 #garabato-map {
     position: absolute;
     z-index: 2;
-    top: 42%;
+    top: 37%;
     right: 49%;
     width: 20%;
 }
@@ -1750,4 +1750,46 @@ section > form > label {
         width: 100%;
         height: 100%;
     }
+}
+
+#info-dudas {
+    margin-top: 150px;
+}
+
+#info-dudas .scribble-dudas {
+    top: -1000;
+    width: 50%;
+}
+
+#resumen-horarios {
+    display: flex;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+
+.scribble-permitido {
+    position: absolute;
+    width: 40%;
+}
+
+.flechas-permitido {
+    width: 50%;
+    margin-top: -90px;
+}
+
+#obj-permitidos {
+    display: flex;
+    gap: 70px;
+    margin-top: 30px;
+    justify-content: space-around;
+}
+
+#obj-permitidos h6 {
+    font-family: var(--font-secondary);
+}
+
+#obj-permitidos h6,
+#obj-permitidos p {
+    text-align: center;
 }
