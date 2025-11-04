@@ -50,6 +50,7 @@
     padding: 0;
     box-sizing: border-box;  
     font-family: var(--font-primary);
+    cursor: url('media/img/mano-cursor.png'), default;
 }
 
 a {
@@ -1793,3 +1794,5 @@ section > form > label {
 #obj-permitidos p {
     text-align: center;
 }
+
+
